@@ -45,8 +45,8 @@ image.addEventListener('wheel', zoom);
 // select
 
 // dblclick
-const title = document.querySelector('h2');
+const title = document.querySelector('.text-content');
 
 title.addEventListener('dblclick', function(e){
-    title.classList.toggle('large');
+    e.target.style.color = 'green';
 })
