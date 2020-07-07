@@ -18,7 +18,21 @@ backGround.addEventListener('keydown', function(event){
 
 // wheel
 
+function zoom(event) {
+    event.preventDefault();
+    scale += event.deltaY * -0.01;
+    scale = Math.min(Math.max(.125, scale), 4);
+    image.style.transform = `scale(${scale})`;
+    }
+
+let scale = 1;
+const image = document.querySelector('img')
+image.onwheel = zoom;
+
+image.addEventListener('wheel', zoom);
+
 // drag / drop
+
 
 // load
 
@@ -31,4 +45,8 @@ backGround.addEventListener('keydown', function(event){
 // select
 
 // dblclick
+const title = document.querySelector('h2');
 
+title.addEventListener('dblclick', function(e){
+    title.classList.toggle('large');
+})
