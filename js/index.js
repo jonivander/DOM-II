@@ -1,6 +1,6 @@
 // Your code goes here
 
-// mouseover
+// 1mouseover
 const navLink = document.querySelectorAll('.nav-link')
 
 for (const link of navLink){
@@ -9,15 +9,14 @@ for (const link of navLink){
     })
 }
 
-// keydown
+// 2keydown
 const backGround = document.querySelector('body')
 
-backGround.addEventListener('keydown', function(event){
-    event.target.style.color = "skyblue";
+backGround.addEventListener('keydown', function(){
+    backGround.style.color = "skyblue";
 })
 
-// wheel
-
+// 3wheel
 function zoom(event) {
     event.preventDefault();
     scale += event.deltaY * -0.01;
@@ -31,22 +30,45 @@ image.onwheel = zoom;
 
 image.addEventListener('wheel', zoom);
 
-// drag / drop
+// 4keyup
+backGround.addEventListener('keyup', function(){
+    backGround.style.color = "pink";
+})
+
+// 5click
+backGround.addEventListener('click', function(){
+    backGround.style.color = "white";
+})
+
+// 6auxclick
+document.body.onauxclick = function(){
+    document.body.style.backgroundColor = 'black';
+}
 
 
-// load
+// 7resize
+document.body.onresize = function(){
+    document.body.style.backgroundColor = 'green';
+}
 
-// focus
+// 8mouseenter
+const mEnter = document.querySelector('.img-content');
 
-// resize
+mEnter.addEventListener('mouseenter', function(){
+    mEnter.style.border = '5px dotted black';
+})
 
-// scroll
 
-// select
+// 9select
+const selection = document.querySelector('.text-content');
 
-// dblclick
+selection.addEventListener('select', function(){
+    selection.style.fontStyle = 'oblique';
+})
+
+// 10dblclick
 const title = document.querySelector('.text-content');
 
-title.addEventListener('dblclick', function(e){
-    e.target.style.color = 'green';
+title.addEventListener('dblclick', function(){
+    title.style.color = 'green';
 })
